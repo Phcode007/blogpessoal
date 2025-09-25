@@ -24,7 +24,6 @@ export class Postagem {
   @UpdateDateColumn()
   data: Date;
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   @ManyToOne(() => Tema, (tema) => tema.postagem, {
     onDelete: 'CASCADE',
   })
