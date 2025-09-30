@@ -12,7 +12,7 @@ import { TemaModule } from './tema/tema.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'mysql123@#',
+      password: 'root123',
       database: 'db_blogpessoal',
       entities: [Postagem, Tema],
       synchronize: true,

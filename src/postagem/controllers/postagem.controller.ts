@@ -26,7 +26,7 @@ export class PostagemController {
   @Get('/:id')
   @HttpCode(HttpStatus.OK)
   findByid(@Param('id', ParseIntPipe) id: number): Promise<Postagem> {
-    return this.postagemService.findByid(id);
+    return this.postagemService.findById(id);
   }
 
   @Get('/titulo/:titulo')
