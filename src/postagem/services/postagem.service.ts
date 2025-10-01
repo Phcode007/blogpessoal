@@ -1,4 +1,3 @@
-/* eslint-disable prefer-const */
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, ILike, Repository } from 'typeorm';
@@ -17,17 +16,19 @@ export class PostagemService {
     return await this.postagemRepository.find({
       relations: {
         tema: true,
+        usuario: true,
       },
     });
   }
 
   async findById(id: number): Promise<Postagem> {
-    let postagem = await this.postagemRepository.findOne({
+    const postagem = await this.postagemRepository.findOne({
       where: {
         id,
       },
       relations: {
         tema: true,
+        usuario: true,
       },
     });
 
@@ -44,6 +45,7 @@ export class PostagemService {
       },
       relations: {
         tema: true,
+        usuario: true,
       },
     });
   }
