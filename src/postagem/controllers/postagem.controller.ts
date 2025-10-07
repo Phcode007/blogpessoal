@@ -1,4 +1,5 @@
-import { PostagemService } from './../services/postagem.service';
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import {
   Body,
   Controller,
@@ -12,11 +13,15 @@ import {
   Put,
   UseGuards,
 } from '@nestjs/common';
-import { Postagem } from '../entities/postagem.entity';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from '../../auth/guard/jwt-auth.guard';
+import { Postagem } from '../entities/postagem.entity';
+import { PostagemService } from '../services/postagem.service';
 
+@ApiTags('Postagem')
 @UseGuards(JwtAuthGuard)
 @Controller('/postagens')
+@ApiBearerAuth()
 export class PostagemController {
   constructor(private readonly postagemService: PostagemService) {}
 
@@ -28,18 +33,18 @@ export class PostagemController {
 
   @Get('/:id')
   @HttpCode(HttpStatus.OK)
-  findByid(@Param('id', ParseIntPipe) id: number): Promise<Postagem> {
+  findById(@Param('id', ParseIntPipe) id: number): Promise<Postagem> {
     return this.postagemService.findById(id);
   }
 
   @Get('/titulo/:titulo')
   @HttpCode(HttpStatus.OK)
-  findByAllTitulo(@Param('titulo') titulo: string): Promise<Postagem[]> {
-    return this.postagemService.findAllByTitulo(titulo);
+  findByTitulo(@Param('titulo') titulo: string): Promise<Postagem[]> {
+    return this.postagemService.findByTitulo(titulo);
   }
 
   @Post()
-  @HttpCode(HttpStatus.OK)
+  @HttpCode(HttpStatus.CREATED)
   create(@Body() postagem: Postagem): Promise<Postagem> {
     return this.postagemService.create(postagem);
   }
