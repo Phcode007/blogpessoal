@@ -1,98 +1,252 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+<img width="1536" height="1024" alt="ChatGPT Image 8 de out  de 2025, 19_35_10" src="https://github.com/user-attachments/assets/d4ccc6bd-34aa-40e0-878a-0e63ce5801d8" />
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# 📝 Blog Pessoal API
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+API RESTful para um blog pessoal desenvolvida com NestJS, TypeORM e PostgreSQL/MySQL. Sistema completo com autenticação JWT, gerenciamento de usuários, postagens e temas.
 
-## Description
+## 🚀 Tecnologias
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- **NestJS** - Framework Node.js progressivo
+- **TypeORM** - ORM para TypeScript e JavaScript
+- **PostgreSQL** - Banco de dados em produção
+- **MySQL** - Banco de dados em desenvolvimento
+- **JWT** - Autenticação e autorização
+- **Bcrypt** - Criptografia de senhas
+- **Swagger** - Documentação da API
+- **Passport** - Middleware de autenticação
 
-## Project setup
+## 📋 Funcionalidades
 
+### Autenticação
+- ✅ Cadastro de usuários com senha criptografada
+- ✅ Login com geração de token JWT
+- ✅ Proteção de rotas com guards
+- ✅ Token com expiração de 1 hora
+
+### Usuários
+- ✅ Listar todos os usuários
+- ✅ Buscar usuário por ID
+- ✅ Criar novo usuário
+- ✅ Atualizar dados do usuário
+- ✅ Validação de e-mail único
+
+### Postagens
+- ✅ CRUD completo de postagens
+- ✅ Busca por título
+- ✅ Relacionamento com tema e usuário
+- ✅ Data de atualização automática
+
+### Temas
+- ✅ CRUD completo de temas
+- ✅ Busca por descrição
+- ✅ Relacionamento com postagens
+
+## 🔧 Instalação
+
+### Pré-requisitos
+- Node.js (v14 ou superior)
+- npm ou yarn
+- PostgreSQL (produção) ou MySQL (desenvolvimento)
+
+### Passos
+
+1. Clone o repositório
 ```bash
-$ npm install
+git clone <url-do-repositorio>
+cd blog-pessoal
 ```
 
-## Compile and run the project
-
+2. Instale as dependências
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm install
 ```
 
-## Run tests
-
+3. Configure as variáveis de ambiente
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# Crie um arquivo .env na raiz do projeto
+DATABASE_URL=sua-url-do-banco-de-dados
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
+4. Execute a aplicação
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+# Modo desenvolvimento
+npm run start:dev
+
+# Modo produção
+npm run start:prod
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## 📡 Endpoints da API
 
-## Resources
+A aplicação estará disponível em `http://localhost:4000`
 
-Check out a few resources that may come in handy when working with NestJS:
+### Documentação Swagger
+Acesse `http://localhost:4000/swagger` para visualizar a documentação interativa completa.
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### Autenticação
 
-## Support
+#### Cadastrar Usuário
+```http
+POST /usuarios/cadastrar
+Content-Type: application/json
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+{
+  "nome": "João Silva",
+  "usuario": "joao@email.com",
+  "senha": "senha123",
+  "foto": "url-da-foto"
+}
+```
 
-## Stay in touch
+#### Login
+```http
+POST /usuarios/logar
+Content-Type: application/json
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+{
+  "usuario": "joao@email.com",
+  "senha": "senha123"
+}
+```
 
-## License
+### Postagens (requer autenticação)
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+#### Listar todas
+```http
+GET /postagens
+Authorization: Bearer {token}
+```
+
+#### Buscar por ID
+```http
+GET /postagens/:id
+Authorization: Bearer {token}
+```
+
+#### Criar postagem
+```http
+POST /postagens
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "titulo": "Minha primeira postagem",
+  "texto": "Conteúdo da postagem",
+  "tema": { "id": 1 },
+  "usuario": { "id": 1 }
+}
+```
+
+### Temas (requer autenticação)
+
+#### Listar todos
+```http
+GET /temas
+Authorization: Bearer {token}
+```
+
+#### Criar tema
+```http
+POST /temas
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "descricao": "Tecnologia"
+}
+```
+
+## 🗄️ Estrutura do Banco de Dados
+
+### Tabela: tb_usuarios
+- `id` - Identificador único
+- `nome` - Nome completo
+- `usuario` - E-mail (único)
+- `senha` - Senha criptografada
+- `foto` - URL da foto de perfil
+
+### Tabela: tb_temas
+- `id` - Identificador único
+- `descricao` - Descrição do tema
+
+### Tabela: tb_postagens
+- `id` - Identificador único
+- `titulo` - Título da postagem
+- `texto` - Conteúdo
+- `data` - Data de atualização
+- `tema_id` - Relacionamento com tema
+- `usuario_id` - Relacionamento com usuário
+
+## 🔒 Segurança
+
+- Senhas criptografadas com bcrypt (10 rounds)
+- JWT com secret seguro
+- Validação de dados com class-validator
+- Guards para proteção de rotas
+- SSL habilitado para conexão PostgreSQL
+
+## 🧪 Testes
+
+```bash
+# Testes unitários
+npm run test
+
+# Testes e2e
+npm run test:e2e
+
+# Cobertura de testes
+npm run test:cov
+```
+
+## 📦 Scripts Disponíveis
+
+```bash
+# Desenvolvimento
+npm run start:dev
+
+# Produção
+npm run start:prod
+
+# Build
+npm run build
+
+# Testes
+npm run test
+npm run test:e2e
+npm run test:cov
+```
+
+## 🌐 Deploy
+
+### Variáveis de Ambiente Necessárias
+```env
+DATABASE_URL=postgresql://user:password@host:port/database
+```
+
+A aplicação está configurada para usar:
+- **PostgreSQL** em produção (via DATABASE_URL)
+- **MySQL** em desenvolvimento (localhost)
+
+## 🤝 Contribuindo
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT.
+
+## 👥 Autores
+
+Desenvolvido com 💜 por Paulo Henrique Belarmino
+
+## 📞 Contato
+
+- Email: paulobelarmino047@gmail.com
+
+---
+
+⭐ Se este projeto te ajudou, considere dar uma estrela!
